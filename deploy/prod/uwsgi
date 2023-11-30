@@ -1,0 +1,21 @@
+#!/bin/bash
+
+SERVICE_NAME=graphql_django_api
+
+PROCESSES=8
+PIDFILE=/var/run/$SERVICE_NAME/uswgi.pid
+LOGFILE=/var/log/$SERVICE_NAME/uwsgi.log
+SOCKET=/var/run/$SERVICE_NAME/uwsgi.sock
+APP="app.wsgi:application"
+WORKDIR=/opt/$SERVICE_NAME
+UWSGI_STATS_PORT=8001
+UWSGI_STATS="--stats :$UWSGI_STATS_PORT --stats-http"
+UWSGI_PARAMS="--chmod-socket=666 --max-requests=10 --enable-threads --harakiri 60 --master --processes $PROCESSES $UWSGI_STATS"
+
+chown -R www-data /var/run/$SERVICE_NAME
+touch /var/log/$SERVICE_NAME/$SERVICE_NAME.log
+chown -R www-data /var/log/$SERVICE_NAME/$SERVICE_NAME.log
+touch /var/log/$SERVICE_NAME/error.log
+chown -R www-data /var/log/$SERVICE_NAME/error.log
+
+uwsgi --socket $SOCKET --chdir $WORKDIR -w $APP --pidfile $PIDFILE --uid www-data $UWSGI_PARAMS --logto $LOGFILE 
