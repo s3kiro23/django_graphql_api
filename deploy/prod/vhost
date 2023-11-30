@@ -4,10 +4,10 @@ upstream uwsgi_graphql_django_api {
 
 server {
         listen 443 ssl;
-    server_name portfolio.jmgeronimi.fr;
+    server_name graphql.dev-custom.net;
 
-    ssl_certificate /etc/letsencrypt/live/portfolio.jmgeronimi.fr/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/portfolio.jmgeronimi.fr/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/graphql.dev-custom.net/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/graphql.dev-custom.net/privkey.pem;
     ssl_session_cache shared:TLSSL:16m;
     ssl_session_timeout 1440m;
     ssl_prefer_server_ciphers   on;
