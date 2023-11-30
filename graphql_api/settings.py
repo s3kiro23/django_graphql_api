@@ -25,7 +25,9 @@ SECRET_KEY = "%$vx%45cf2p)l^ogj35(!_-$&6r4ete&v#aq3idlfdu4jj#0e$"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "graphql.dev-custom.net"
+]
 
 
 # Application definition
@@ -124,6 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
+STATICFILES_DIR = [BASE_DIR.joinpath('static/')]
+STATIC_ROOT = '/opt/graphql_django_api/static_files'
 
 GRAPHENE = {
     "SCHEMA": "graphql_api.schema.schema",
