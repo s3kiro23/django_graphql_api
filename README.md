@@ -1,8 +1,5 @@
 # graphql_django_api
 
-New project with Django to discover GraphQL implementation.
-We manipulate contact cards.
-
 ### Setup local
 
     python -m venv env
