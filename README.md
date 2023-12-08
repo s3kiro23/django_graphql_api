@@ -1,4 +1,4 @@
-# graphql_django_api
+# django_graphql_api
 
 ### Setup local
 
