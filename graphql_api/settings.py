@@ -26,6 +26,7 @@ SECRET_KEY = "%$vx%45cf2p)l^ogj35(!_-$&6r4ete&v#aq3idlfdu4jj#0e$"
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "graphql.dev-custom.net"
 ]
 
