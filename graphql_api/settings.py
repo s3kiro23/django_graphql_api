@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
-    "graphql.dev-custom.net"
+    "graphqlapi.dev-custom.net"
 ]
 
 
