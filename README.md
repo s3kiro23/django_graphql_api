@@ -35,10 +35,10 @@ You can run your first query with following :
 Create your contact with new query :
 
     mutation nameOfMutation {
-        createContact(name: "New Contact", phoneNumber: "486054-850"){
+        createContact(email: "test@gc.com", name: "New Contact", phone: "486054-850", message: "test"){
             contact {
             name,
-            phoneNumber
+            phone
             }
         }
     }
