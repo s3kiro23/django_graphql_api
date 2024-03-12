@@ -37,9 +37,6 @@ if [ ! -d $DATA_DIR ]; then
     chown -R www-data:www-data $DATA_DIR
 fi
 
-docker-compose down -v
-docker-compose up -d
-
 VOLUME_DIR=`docker volume inspect --format '{{ .Mountpoint }}' $APP_NAME'_static'`
 TARGET_DIR='/var/www/'$APP_NAME'_static'
 
@@ -51,3 +48,6 @@ if [ -d $VOLUME_DIR ]; then
     fi
     ln -s $VOLUME_DIR $TARGET_DIR
 fi
+
+docker-compose down -v
+docker-compose up -d
